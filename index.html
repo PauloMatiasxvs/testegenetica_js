@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo Genético - Controle Completo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Evolução de Besouros</h1>
+        
+        <!-- Controles Principais -->
+        <div class="main-controls">
+            <button onclick="initializePopulation()">1. Nova População</button>
+            <button onclick="performSelection()" id="selectionBtn" disabled>2. Selecionar Pais</button>
+            <button onclick="performCrossover()" id="crossoverBtn" disabled>3. Aplicar Crossover</button>
+            <button onclick="performMutation()" id="mutationBtn" disabled>4. Aplicar Mutação</button>
+            <button onclick="nextGeneration()" id="nextGenBtn" disabled>5. Nova Geração</button>
+        </div>
+
+        <!-- Seleção de Operadores -->
+        <div class="operator-select">
+            <!-- CROSSOVER -->
+            <div class="operator-group">
+                <h3>Tipo de Crossover:</h3>
+                <div class="operator-options">
+                    <div class="operator-card" data-type="crossover" data-value="aritmetico">
+                        <div class="operator-title">Aritmético</div>
+                        <div class="operator-desc">Média dos genes dos pais</div>
+                    </div>
+                    
+                    <div class="operator-card" data-type="crossover" data-value="umponto">
+                        <div class="operator-title">Um Ponto</div>
+                        <div class="operator-desc">Divisão em ponto aleatório</div>
+                    </div>
+                    
+                    <div class="operator-card" data-type="crossover" data-value="uniforme">
+                        <div class="operator-title">Uniforme</div>
+                        <div class="operator-desc">Combinação aleatória</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MUTAÇÃO -->
+            <div class="operator-group">
+                <h3>Tipo de Mutação:</h3>
+                <div class="operator-options">
+                    <div class="operator-card" data-type="mutacao" data-value="aleatoria">
+                        <div class="operator-title">Aleatória</div>
+                        <div class="operator-desc">Valor totalmente novo</div>
+                    </div>
+                    
+                    <div class="operator-card" data-type="mutacao" data-value="pequena">
+                        <div class="operator-title">Pequena</div>
+                        <div class="operator-desc">Variação de ±10</div>
+                    </div>
+                    
+                    <div class="operator-card" data-type="mutacao" data-value="dirigida">
+                        <div class="operator-title">Dirigida</div>
+                        <div class="operator-desc">Redução progressiva</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualização da População -->
+        <div class="population-container">
+            <div class="population-section">
+                <h3>População Atual</h3>
+                <div id="currentPopulation" class="population-grid"></div>
+            </div>
+
+            <div class="population-section">
+                <h3>Pais Selecionados</h3>
+                <div id="selectedParents" class="population-grid"></div>
+            </div>
+
+            <div class="population-section">
+                <h3>Filhos (Crossover)</h3>
+                <div id="children" class="population-grid"></div>
+            </div>
+
+            <div class="population-section">
+                <h3>Filhos (Mutação)</h3>
+                <div id="mutatedChildren" class="population-grid"></div>
+            </div>
+
+            <div class="population-section next-gen">
+                <h3>Próxima Geração</h3>
+                <div id="nextGeneration" class="population-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
