@@ -172,18 +172,158 @@ function nextGeneration() {
     displayPopulation([], 'children');
     displayPopulation([], 'mutatedChildren');
 }
-
+//CODIGO C# que fiz primeiro como base
 // Inicialização
-document.getElementById('popSize').addEventListener('input', function() {
-    document.getElementById('popSizeValue').textContent = this.value;
-});
+//document.getElementById('popSize').addEventListener('input', function() {
+    //document.getElementById('popSizeValue').textContent = this.value;
+//});
 
-document.getElementById('mutationRate').addEventListener('input', function() {
-    document.getElementById('mutationRateValue').textContent = this.value;
-});
+//document.getElementById('mutationRate').addEventListener('input', function() {
+    //document.getElementById('mutationRateValue').textContent = this.value;
+//});
 
-document.getElementById('generations').addEventListener('input', function() {
-    document.getElementById('generationsValue').textContent = this.value;
-});
+//document.getElementById('generations').addEventListener('input', function() {
+    //document.getElementById('generationsValue').textContent = this.value;
+//});
 
-initializePopulation();
+//initializePopulation();
+
+//public class Besouro
+//{
+    //private static readonly Random rand = new Random();
+    
+    //public int R { get; set; }
+    //public int G { get; set; }
+    //public int B { get; set; }
+    
+    //public Besouro(int? r = null, int? g = null, int? b = null)
+    //{
+       // R = r ?? rand.Next(256);
+       // G = g ?? rand.Next(256);
+        //B = b ?? rand.Next(256);
+    //}
+    
+    //public int Fitness => 765 - (R + G + B);
+    
+    //public Color Cor => Color.FromArgb(R, G, B);
+//}
+
+//public partial class Form1 : Form
+//{
+    //private List<Besouro> currentPopulation = new List<Besouro>();
+    //private List<Besouro> selectedParents = new List<Besouro>();
+   // private List<Besouro> children = new List<Besouro>();
+   // private List<Besouro> mutatedChildren = new List<Besouro>();
+   // private string selectedCrossover = "aritmetico";
+   // private string selectedMutacao = "aleatoria";
+   // private static readonly Random rand = new Random();
+
+  // public Form1()
+   // {
+   //     InitializeComponent();
+     //   InitializeOperators();
+    //    InitializePopulation();
+   //}
+
+   // private void InitializeOperators()
+  //  {
+        // Configura eventos para os botões de operadores
+     //   foreach (var card in Controls.OfType<Panel>().Where(p => p.Tag?.ToString() == "operator"))
+      //  {
+        //    card.Click += (sender, e) =>
+       //     {
+           //     var panel = (Panel)sender;
+            //    string type = panel.Name.Contains("crossover") ? "crossover" : "mutacao";
+            //    string value = panel.Tag.ToString().Split(';')[1];
+
+                // Desseleciona outros
+             //   foreach (var p in Controls.OfType<Panel>().Where(p => p.Tag?.ToString()?.StartsWith(type) == true))
+               //     p.BackColor = SystemColors.Control;
+
+               // panel.BackColor = Color.LightBlue;
+                
+              //  if (type == "crossover") selectedCrossover = value;
+             //   else selectedMutacao = value;
+           // };
+      //  }
+   // }
+
+    //private void UpdateButtonStates()
+    //{
+       // btnSelection.Enabled = currentPopulation.Count > 0;
+       // btnCrossover.Enabled = selectedParents.Count == 2;
+        //btnMutation.Enabled = children.Count > 0;
+    //}
+
+    //private void DisplayPopulation(List<Besouro> population, FlowLayoutPanel container)
+    //{
+        //container.Controls.Clear();
+        //
+        //foreach (var besouro in population)
+        //{
+           // var panel = new Panel
+           // {
+               // Width = 120,
+               // Height = 120,
+               // BackColor = besouro.Cor,
+                //BorderStyle = BorderStyle.FixedSingle
+          //  };
+
+          //  var lblInfo = new Label
+         //   {
+               // Text = $"R: {besouro.R}\nG: {besouro.G}\nB: {besouro.B}\nFitness: {besouro.Fitness}",
+               // ForeColor = Color.White,
+              //  Dock = DockStyle.Fill
+           // };
+
+            //panel.Controls.Add(lblInfo);
+           // container.Controls.Add(panel);
+       // }
+   // }
+
+   // private void InitializePopulation()
+    //{
+        //currentPopulation = Enumerable.Range(0, 4).Select(_ => new Besouro()).ToList();
+       // selectedParents.Clear();
+       // children.Clear();
+        //mutatedChildren.Clear();
+        
+        //UpdateButtonStates();
+        //DisplayPopulation(currentPopulation, flowCurrentPopulation);
+        // Repetir para outros containers...
+    //}
+
+    // Restante dos métodos (Implementar similar ao JavaScript)
+    //private void PerformSelection()
+   // {
+        //selectedParents = currentPopulation.OrderByDescending(b => b.Fitness).Take(2).ToList();
+       // DisplayPopulation(selectedParents, flowSelectedParents);
+       // UpdateButtonStates();
+    //}
+
+    //private void PerformCrossover()
+    //{
+        //var pai1 = selectedParents[0];
+        //var pai2 = selectedParents[1];
+        
+        //switch (selectedCrossover)
+       // {
+            //case "aritmetico":
+                //children.Add(new Besouro(
+                    //(pai1.R + pai2.R) / 2,
+                    //(pai1.G + pai2.G) / 2,
+                    //(pai1.B + pai2.B) / 2));
+               // break;
+            // Implementar outros crossovers
+       // }
+        //DisplayPopulation(children, flowChildren);
+       // UpdateButtonStates();
+    //}
+
+    // Implementar PerformMutation() e NextGeneration() similarmente
+
+    // Event handlers dos botões
+    //private void btnInitialize_Click(object sender, EventArgs e) => InitializePopulation();
+    //private void btnSelection_Click(object sender, EventArgs e) => PerformSelection();
+    // ... outros handlers
+//}
