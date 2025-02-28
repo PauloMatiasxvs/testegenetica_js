@@ -1,3 +1,5 @@
+//codigo limpado
+
 class Besouro {
     constructor(R = null, G = null, B = null) {
         this.R = R ?? Math.floor(Math.random() * 256);
